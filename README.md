@@ -31,6 +31,10 @@ A simple yaml file with a single key-value pair ```datafolder: /path/to/data``` 
 
 The frontend part is expected to be React, while the backend app/lib/tool choices are flexible.
 
+### Style
+
+Not important as long as the functionality is there, ie. we are not looking for an exact copy of the wireframe image.
+
 ### Documentation
 
 Simple user guide describing installation, configuration and running the application. 
