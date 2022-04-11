@@ -40,6 +40,10 @@ Readable.
 
 Please commit changes with comments, not the entire solution at one go once it's ready.
 
+### Publishing
+
+Once done, publish the result under your own Github account and provide URL to us. 
+
 
 ### Extra points
 - Dockerfile/s
