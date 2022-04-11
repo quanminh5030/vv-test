@@ -27,6 +27,9 @@ A simple yaml file with a single key-value pair ```datafolder: /path/to/data``` 
 
 
 ## Requirements
+### Tools
+
+THe frontend part is expected to be React, while the backend tools are flexible.
 
 ### Documentation
 
