@@ -2,18 +2,18 @@
 
 ## Objective
 
-The objective of the excerise is to create a simple React and backend app for viewing images in the data folder.
+The objective of the excerise is to create a simple React and backend app for viewing image datasets in the data folder.
 
-The example data sets consist of samples *case-1* and *case-2*, which in turn consist of n images.
+The example datasets consist of samples *case-1* and *case-2*, which in turn consist of n images.
 
 ![image wireframe](./wireframe.png)
 
 ### Navigation
 The upper navigation arrows (*Previous, Next*) switch between datasets in alphabetical order (*case-1, case-2, case-n*). The title is the name of the case (*case-1*).
 
-The buttons below the image (*Previous image, Next image*) flip through the image set alphabetically (*0.png, 1.png, n.png* etc.), and are either disabled at the beginning or end of the images set, or respectively jump directly to the beginning or end .
+The buttons below the image (*Previous image, Next image*) flip through the chose dataset images alphabetically (*0.png, 1.png, n.png* etc.), and are either disabled at the beginning or end of the images set, or respectively jump directly to the beginning or end .
 
-Landing on the frontpage shows the first case and first image.
+Landing on the frontpage shows the first dataset and first image of that dataset.
 
 ### Rotation
 
