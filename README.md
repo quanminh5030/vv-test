@@ -15,11 +15,11 @@ The buttons below the image (*Previous image, Next image*) flip through the imag
 
 Landing on the frontpage shows the first case and first image.
 
-###Rotation
+### Rotation
 
 By pressing the rotate button, the image in view rotates clockwise 90 degrees, and can be rotated a full 360 degrees by clicking it four times.
 
-###Backend configuration
+### Backend configuration
 
 A simple yaml file with a single key-value pair ```datafolder: /path/to/data``` pointing to the given data folder is sufficient.
 
