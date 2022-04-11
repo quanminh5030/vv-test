@@ -2,7 +2,7 @@
 
 ## Objective
 
-The objective of the excerise is to create a simple React and backend app for viewing the images in the data folder,
+The objective of the excerise is to create a simple React and backend app for viewing images in the data folder.
 
 The example data sets consist of samples *case-1* and *case-2*, which in turn consist of n images.
 
