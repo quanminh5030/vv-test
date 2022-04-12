@@ -4,7 +4,7 @@
 
 The objective of the excerise is to create a simple React and backend app for viewing image datasets in the data folder.
 
-The example datasets consist of samples *case-1* and *case-2*, which each consist of n images.
+The example datasets consist of samples *case-1* and *case-2*, which each consist of n images. Sets and images are to be read dynamically from the given root folder.
 
 ![image wireframe](./wireframe.png)
 
