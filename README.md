@@ -2,7 +2,7 @@
 
 ## Objective
 
-The objective of the excerise is to create a simple React and backend app for viewing image datasets in the data folder.
+The objective of the excerise is to create a simple React and backend app for viewing image datasets in the data folder. 
 
 The example datasets consist of samples *case-1* and *case-2*, which each consist of n images. Sets and images are to be read dynamically from the given root folder.
 
@@ -55,6 +55,10 @@ Once done, publish the result under your own Github account and provide URL to u
 ### Extra points
 - Dockerfile/s
 - Unit tests
+
+### More
+
+We value a sincere and concise attempt at the problem equally as much as a complete, finished solution. 
 
 
 
