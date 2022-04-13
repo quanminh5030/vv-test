@@ -6,16 +6,8 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import './App.css'
 
 interface DataType {
-  case1: {
-    one: string
-    two: string
-    three: string
-  }
-  case2: {
-    zero: string
-    one: string
-    two: string
-    three: string
+  [key: string]: {
+    [key: string]: string
   }
 }
 
@@ -23,7 +15,7 @@ type SelectedType = 'case1' | 'case2'
 
 function App() {
   const [data, setData] = useState<DataType | null>(null)
-  const [selected, setSelected] = useState<SelectedType>('case1')
+  const [selectedDataSet, setSelectedDataSet] = useState<SelectedType>('case1')
   const [degree, setDegree] = useState(0)
   const [current, setCurrent] = useState(0)
 
@@ -39,8 +31,9 @@ function App() {
   }
 
   const handleClick = (value: SelectedType) => {
-    setSelected(value)
+    setSelectedDataSet(value)
     setCurrent(0)
+    setDegree(0)
   }
 
   const handleRotate = () => {
@@ -49,40 +42,55 @@ function App() {
 
   const handleChange = (current: any) => {
     setCurrent(current)
+    setDegree(0)
+  }
+
+  const handleSort = (a: any, b: any) => {
+    return Number(a.match(/(\d+)/g)[0]) - Number(b.match(/(\d+)/g)[0])
   }
 
   return (
     <div className="App">
       <div style={{ margin: '50px' }}>
-        {Object.keys(data).map((key) => (
-          <button
-            key={key}
-            style={key === selected ? { background: 'lightblue' } : {}}
-            onClick={() => handleClick(key as SelectedType)}
-          >
-            {key}
-          </button>
-        ))}
+        {Object.keys(data)
+          .sort(handleSort)
+          .map((key) => (
+            <button
+              key={key}
+              style={key === selectedDataSet ? { background: 'lightblue' } : {}}
+              onClick={() => handleClick(key as SelectedType)}
+            >
+              {key}
+            </button>
+          ))}
       </div>
 
-      <div style={{ width: '70%', margin: 'auto' }}>
+      <div className="content">
         <Carousel
           showArrows={true}
           onChange={(current) => handleChange(current)}
+          selectedItem={current}
         >
-          {Object.values(data[selected]).map((item, index) => (
+          {Object.values(data[selectedDataSet]).map((item, index) => (
             <div key={item}>
               <img
                 src={item}
                 alt={item}
                 style={
-                  index === current ? { transform: `rotate(${degree}deg)` } : {}
+                  index === current
+                    ? {
+                        transform: `rotate(${degree}deg)`,
+                        transition: `transform 500ms ease-in-out`,
+                      }
+                    : {}
                 }
               />
             </div>
           ))}
         </Carousel>
-        <button onClick={handleRotate}>Rotate</button>
+        <button className="rotate_btn" onClick={handleRotate}>
+          Rotate
+        </button>
       </div>
     </div>
   )

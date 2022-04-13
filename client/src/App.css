@@ -7,3 +7,12 @@
   margin: 5px;
   border-radius: 5px
 }
+
+.content {
+  width: 50%;
+  margin: auto;
+}
+
+.content button {
+  padding: 10px 30px;
+}
