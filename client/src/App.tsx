@@ -1,21 +1,19 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { Carousel } from 'react-responsive-carousel'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 import './App.css'
+import ButtonsList from './component/ButtonsList'
+import ImagesList from './component/ImagesList'
 
-interface DataType {
+export interface DataType {
   [key: string]: {
     [key: string]: string
   }
 }
 
-type SelectedType = 'case-1' | 'case-2'
-
 function App() {
   const [data, setData] = useState<DataType | null>(null)
-  const [selectedDataSet, setSelectedDataSet] = useState<SelectedType>('case-1')
+  const [selectedDataSet, setSelectedDataSet] = useState('case-1')
   const [degree, setDegree] = useState(0)
   const [current, setCurrent] = useState(0)
 
@@ -30,7 +28,7 @@ function App() {
     return null
   }
 
-  const handleClick = (value: SelectedType) => {
+  const handleClick = (value: string) => {
     setSelectedDataSet(value)
     setCurrent(0)
     setDegree(0)
@@ -40,62 +38,29 @@ function App() {
     setDegree(degree + 90)
   }
 
-  const handleChange = (current: any) => {
+  const handleChange = (current: number) => {
     setCurrent(current)
     setDegree(0)
   }
 
-  const handleSort = (a: any, b: any) => {
-    return Number(a.match(/(\d+)/g)[0]) - Number(b.match(/(\d+)/g)[0])
-  }
-
-  const formatTitle = (title: string) => {
-    return (title[0].toUpperCase() + title.slice(1)).replace('-', ' ')
-  }
-
   return (
     <div className="App">
-      <div style={{ margin: '50px' }}>
-        {Object.keys(data)
-          .sort(handleSort)
-          .map((key) => (
-            <button
-              key={key}
-              style={key === selectedDataSet ? { background: 'lightblue' } : {}}
-              onClick={() => handleClick(key as SelectedType)}
-            >
-              {formatTitle(key)}
-            </button>
-          ))}
-      </div>
+      <h1>VV-TEST</h1>
 
-      <div className="content">
-        <Carousel
-          showArrows={true}
-          onChange={(current) => handleChange(current)}
-          selectedItem={current}
-        >
-          {Object.values(data[selectedDataSet]).map((item, index) => (
-            <div key={item}>
-              <img
-                src={item}
-                alt={item}
-                style={
-                  index === current
-                    ? {
-                        transform: `rotate(${degree}deg)`,
-                        transition: `transform 500ms ease-in-out`,
-                      }
-                    : {}
-                }
-              />
-            </div>
-          ))}
-        </Carousel>
-        <button className="rotate_btn" onClick={handleRotate}>
-          Rotate
-        </button>
-      </div>
+      <ButtonsList
+        data={data}
+        selectedDataSet={selectedDataSet}
+        handleClick={handleClick}
+      />
+
+      <ImagesList
+        data={data}
+        current={current}
+        degree={degree}
+        handleChange={handleChange}
+        selectedDataSet={selectedDataSet}
+        handleRotate={handleRotate}
+      />
     </div>
   )
 }
