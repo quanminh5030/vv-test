@@ -11,11 +11,11 @@ interface DataType {
   }
 }
 
-type SelectedType = 'case1' | 'case2'
+type SelectedType = 'case-1' | 'case-2'
 
 function App() {
   const [data, setData] = useState<DataType | null>(null)
-  const [selectedDataSet, setSelectedDataSet] = useState<SelectedType>('case1')
+  const [selectedDataSet, setSelectedDataSet] = useState<SelectedType>('case-1')
   const [degree, setDegree] = useState(0)
   const [current, setCurrent] = useState(0)
 
@@ -49,6 +49,10 @@ function App() {
     return Number(a.match(/(\d+)/g)[0]) - Number(b.match(/(\d+)/g)[0])
   }
 
+  const formatTitle = (title: string) => {
+    return (title[0].toUpperCase() + title.slice(1)).replace('-', ' ')
+  }
+
   return (
     <div className="App">
       <div style={{ margin: '50px' }}>
@@ -60,7 +64,7 @@ function App() {
               style={key === selectedDataSet ? { background: 'lightblue' } : {}}
               onClick={() => handleClick(key as SelectedType)}
             >
-              {key}
+              {formatTitle(key)}
             </button>
           ))}
       </div>

@@ -1,15 +1,15 @@
-case2:
+case-2:
   zero: '/case-2/0.png'
   one: '/case-2/1.png'
   two: '/case-2/2.png'
   three: '/case-2/3.png'
 
-case1:
+case-1:
   one: '/case-1/1.png'
   two: '/case-1/2.png'
   three: '/case-1/3.png'
 
-case11:
+case-11:
   one: '/case-1/1.png'
   two: '/case-1/2.png'
   three: '/case-1/3.png'
