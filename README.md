@@ -1,12 +1,5 @@
 # vv-test
 
-## Run the application in your local machine
-```bash
-move to the server directory to run the backend: [cd ./server]
-
-move to the client directory to run the frontend: [cd ./client]
-```
-
 ## Objective
 
 The objective of the excerise is to create a simple React and backend app for viewing image datasets in the data folder. 
@@ -67,5 +60,53 @@ Once done, publish the result under your own Github account and provide URL to u
 
 We value a sincere and concise attempt at the problem equally as much as a complete, finished solution. 
 
+## Run the application in your local machine
+
+First clone this repository
+
+```bash
+$ git clone git@github.com:quanminh5030/vv-test.git
+
+```
+
+### Run the backend 
+
+* Move to the server directory: ```cd ./server```
+* Install dependencies. Make sure you already have [`nodejs`](https://nodejs.org/en/) & [`yarn`](https://classic.yarnpkg.com/lang/en/) installed in your system.
+
+```bash
+$ yarn install
+```
+
+* Run it
+
+```bash
+$ yarn dev
+```
+
+Open [http://localhost:3001/all](http://localhost:3001/all) to view the data in the browser.
 
 
+### Run the frontend
+
+* Move to the client directory: ```cd ./client```
+
+* Install dependencies. Make sure you already have [`nodejs`](https://nodejs.org/en/) & [`yarn`](https://classic.yarnpkg.com/lang/en/) installed in your system.
+
+```bash
+$ yarn install
+```
+
+* Run it
+
+```bash
+$ yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
+
+### Run the unit tests in frontend
+
+```bash
+$ yarn test
+```
