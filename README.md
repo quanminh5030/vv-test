@@ -107,6 +107,9 @@ Open [http://localhost:3000](http://localhost:3000) to view the application in t
 
 ### Run the unit tests in frontend
 
+* Move to the client directory: ```cd ./client```
+
+* Run the test command
 ```bash
 $ yarn test
 ```
