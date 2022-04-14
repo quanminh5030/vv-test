@@ -1,9 +1,10 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-import './App.css'
 import ButtonsList from './component/ButtonsList'
 import ImagesList from './component/ImagesList'
+import './App.css'
+import NotFound from './component/Loading'
 
 export interface DataType {
   [key: string]: {
@@ -24,11 +25,7 @@ function App() {
       .catch((err) => console.log(err))
   }, [])
 
-  if (!data) {
-    return null
-  }
-
-  const handleClick = (value: string) => {
+  const handleClick = (value: string) => {    
     setSelectedDataSet(value)
     setCurrent(0)
     setDegree(0)
@@ -45,22 +42,26 @@ function App() {
 
   return (
     <div className="App">
-      <h1>VV-TEST</h1>
-
-      <ButtonsList
-        data={data}
-        selectedDataSet={selectedDataSet}
-        handleClick={handleClick}
-      />
-
-      <ImagesList
-        data={data}
-        current={current}
-        degree={degree}
-        handleChange={handleChange}
-        selectedDataSet={selectedDataSet}
-        handleRotate={handleRotate}
-      />
+      <h1> VV-TEST</h1>
+      {data ? (
+        <>
+          <ButtonsList
+            data={data}
+            selectedDataSet={selectedDataSet}
+            handleClick={handleClick}
+          />
+          <ImagesList
+            data={data}
+            current={current}
+            selectedDataSet={selectedDataSet}
+            degree={degree}
+            handleChange={handleChange}
+            handleRotate={handleRotate}
+          />
+        </>
+      ) : (
+        <NotFound />
+      )}
     </div>
   )
 }

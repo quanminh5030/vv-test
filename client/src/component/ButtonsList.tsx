@@ -18,6 +18,7 @@ const ButtonsList = ({
         .sort(handleSort)
         .map((key) => (
           <button
+            className='dataset_btn'
             key={key}
             style={key === selectedDataSet ? { background: 'lightblue' } : {}}
             onClick={() => handleClick(key)}

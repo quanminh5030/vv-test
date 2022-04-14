@@ -5,3 +5,8 @@ export const handleSort = (a: any, b: any) => {
 export const formatTitle = (title: string) => {
   return (title[0].toUpperCase() + title.slice(1)).replace('-', ' ')
 }
+
+export const getImageName = (url: string) => {
+  const splitStr = url.split('/')
+  return splitStr[splitStr.length - 1]
+}

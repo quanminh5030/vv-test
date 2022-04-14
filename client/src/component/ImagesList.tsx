@@ -1,6 +1,7 @@
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { DataType } from '../App'
+import { getImageName } from '../utils/helper'
 
 export interface PropsType {
   data: DataType
@@ -19,6 +20,9 @@ const ImagesList = ({
   handleChange,
   handleRotate,
 }: PropsType) => {
+
+  const imgList = Object.values(data[selectedDataSet])
+
   return (
     <div className="content">
       <Carousel
@@ -26,22 +30,24 @@ const ImagesList = ({
         onChange={(current) => handleChange(current)}
         selectedItem={current}
       >
-        {Object.values(data[selectedDataSet]).map((item, index) => (
-          <div key={item}>
-            <img
-              src={item}
-              alt={item}
-              style={
-                index === current
-                  ? {
-                      transform: `rotate(${degree}deg)`,
-                      transition: `transform 500ms ease-in-out`,
-                    }
-                  : {}
-              }
-            />
-          </div>
-        ))}
+        {imgList.map((item, index) => {
+          return (
+            <div key={item} className='main_img'>
+              <img
+                src={item}
+                alt={getImageName(item)}
+                style={
+                  index === current
+                    ? {
+                        transform: `rotate(${degree}deg)`,
+                        transition: `transform 500ms ease-in-out`,
+                      }
+                    : {}
+                }
+              />
+            </div>
+          )
+        })}
       </Carousel>
       <button className="rotate_btn" onClick={handleRotate}>
         Rotate
