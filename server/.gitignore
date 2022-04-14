@@ -1,0 +1,8 @@
+*.log
+
+# dependency directory
+node_modules
+
+# ignore built ts files
+dist/**/*
+

@@ -104,11 +104,3 @@ dist
 .tern-port
 
 .idea
-
-# backend server
-./server/node_modules
-./server/dist
-
-# frontend 
-./client/node_modules
-./client/build
