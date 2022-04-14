@@ -1,5 +1,12 @@
 # vv-test
 
+## Run the application in your local machine
+```bash
+move to the server directory to run the backend: [cd ./server]
+
+move to the client directory to run the frontend: [cd ./client]
+```
+
 ## Objective
 
 The objective of the excerise is to create a simple React and backend app for viewing image datasets in the data folder. 
